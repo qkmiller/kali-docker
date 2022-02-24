@@ -1,0 +1,8 @@
+#!/bin/bash
+
+docker build -t kali-custom \
+  --build-arg user=user \
+  --build-arg password=kali123 \
+  --no-cache \
+  .
+

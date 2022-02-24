@@ -1,0 +1,10 @@
+#!/bin/bash
+
+mkdir -p ./shared
+
+docker run -it \
+  --name kali \
+  --cap-add=NET_ADMIN \
+  --mount type=bind,source="$(pwd)"/shared,target="/shared" \
+  --device /dev/net/tun \
+  kali-custom
