@@ -5,7 +5,9 @@ mkdir -p ./shared
 docker run -it \
   --name kali \
   --cap-add=NET_ADMIN \
-  --network=host \
+  --publish 80:80 
+  --publish 443:443 
+  --publish 4444:4444
   --mount type=bind,source="$(pwd)"/shared,target="/shared" \
   --device /dev/net/tun \
   kali-custom
